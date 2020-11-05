@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SearchTest</title>
+    <link rel="stylesheet" href="./forSearch.css" />
+    <style>
+      html {
+        background-color: rgb(121, 206, 192);
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+      }
+      .searchForm {
+        max-width: 300px;
+        margin: 30px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="searchForm">
+      <input type="text" class="search" placeholder="type here!" />
+      <ul class="searchResault"></ul>
+    </form>
+    <script>
+      const articleData = "http://localhost:3000/try-db-all";
+
+      let articles = null;
+      fetch(articleData)
+        .then((r) => r.json())
+        .then((data) => (articles = data));
+
+      function findMatches(wordToMatch, articles) {
+        return articles.filter((item) => {
+          const regex = new RegExp(wordToMatch, "gi");
+          return item.title.match(regex) || item.context.match(regex);
+        });
+      }
+
+      function inputHandler() {
+        const matchArray = findMatches(this.value, articles);
+        const html = matchArray.map((item) => {
+          const regex = new RegExp(this.value, "gi");
+          const titleName = item.title.replace(
+            regex,
+            `<span>${this.value}</span>`
+          );
+          return `
+            <main>
+            <div class="articleList">
+              <div class="otherArticles">
+               <div class="otherArticle"
+                 <div class="forHover">
+                   <img src="https://picsum.photos/id/280/370/230" alt="" />                        
+                 </div>
+                 <div class="text">
+                <h3>value.title</h3>
+              <p>value.createTime</p>
+              <button><a href="#">繼續閱讀</a></button>
+            </div>
+          </div>
+          </div>
+          </div>
+          </main>
+        `;
+        });
+        searchResault.innerHTML = html;
+      }
+
+      const searchInput = document.querySelector(".search");
+      const searchResault = document.querySelector(".searchResault");
+
+      searchInput.addEventListener("keyup", inputHandler);
+      searchInput.addEventListener("change", inputHandler);
+    </script>
+  </body>
+</html>
