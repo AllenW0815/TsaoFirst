@@ -27,7 +27,7 @@ function OtherArticle(props) {
       const display=(
           <>
         {article.map((value,index)=>{
-          if(value.type === type && value.type !==0){
+          
             return(<div className={value.sid %2 === 0?"otherArticleReverse":"otherArticle"}>
             <div className="forHover">
             <img src={"http://localhost:3001/Img/文章圖片/"+ value.picName} alt="" />                        
@@ -37,7 +37,7 @@ function OtherArticle(props) {
               <p>{value.createTime}</p>
               <button><a href="#">繼續閱讀</a></button>
             </div>
-          </div>)}
+          </div>)
         })}         
         </> 
       )
