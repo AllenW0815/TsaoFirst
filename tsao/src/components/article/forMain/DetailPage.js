@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import './../../css/.css';
-function LatestArticle() {
+import './../css/DetailPage.css';
+function DetailPage() {
     const [article, setArticle] = useState([])
 
     async function getArticleFromServer() {
@@ -27,14 +27,13 @@ function LatestArticle() {
       const display=(
           <>
         {article.map((value,index)=>{
-            return(<div class="latestArticle">
+            return(<div className="detailArticle">
               <h2>{value.title}</h2>
           <p>{value.createTime}</p>
-          <div class="forHover">
+          <div className="forHover">
           <img src={"http://localhost:3001/Img/文章圖片/"+ value.picName} alt="" />
           </div>
-          <div class="contextP"><p>{value.context}</p></div>         
-          <button><a href="#">繼續閱讀</a></button>
+          <div className="contextP"><p>{value.context}</p></div>         
           </div>)
         })}         
         </> 
@@ -46,4 +45,4 @@ function LatestArticle() {
   );
 }
 
-export default LatestArticle;
+export default DetailPage;

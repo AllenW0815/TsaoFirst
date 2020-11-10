@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './../../css/.css';
+import './../css/.css';
 function Featured() {
     const [article, setArticle] = useState([])
 
@@ -27,17 +27,17 @@ function Featured() {
       const display=(
           <>
         {article.map((value,index)=>{
-            return(<div class="featuredBlock">
+            return(<div className="featuredBlock">
             <button><a href="#">{value.sid}</a></button>
             <h3>{value.title}</h3>
-            <div class="line"></div>
+            <div className="line"></div>
           </div>)
         })}         
         </> 
       )
   return (
     <>
-    <div class="featuredTop">艸艸精選文章</div>
+    <div className="featuredTop">艸艸精選文章</div>
     {display}       
     </>
   );

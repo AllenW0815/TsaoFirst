@@ -1,33 +1,29 @@
 import React,{useState} from 'react';
-import './../css/.css';
-import LatestArticle from './forMain/LatestArticle'
-import OtherArticle from './forMain/OtherArticle'
+import './css/.css';
 import Featured from './forMain/Featured'
-function Main() {
+import DetailPage from './forMain/DetailPage'
+
+
+function DetailMain() {
   return (
     <>
-    <main>
-      <div class="articleList">
-         <LatestArticle/>
-        <div class="hr"></div>
-        <div class="otherArticles">
-        <OtherArticle/>
-        </div>
-        <div class="dropIcon"><img src="./IMG/dropDown.svg" /></div>
-      </div>
-      <div class="recommend"> 
-        <div class="featured">
+      <div className="articleList">
+        <div className="hr"></div>
+        <DetailPage/>
+      </div>    
+      <div className="recommend"> 
+        <div className="featured">
           <Featured/>
         </div>
-        <div class="productRecommend">
+        <div className="productRecommend">
           <div>
             <img src="./IMG/為您推薦Icon.svg" alt="" />
             <h3>為您推薦</h3>
           </div>
         </div>
-        <div class="productLink">
+        <div className="productLink">
           <img src="https://picsum.photos/id/280/320/320" alt="" />
-          <div class="coupon">
+          <div className="coupon">
             <div>戶外體驗</div>
             <div>限額</div>
           </div>
@@ -35,17 +31,17 @@ function Main() {
           <p>
             它是集體隨時指揮進來並非回麼嘉義不得不，前 進線上打開臨時驚訝......
           </p>
-          <div class="productLine"></div>
-          <p class="productTime">2020.11.20</p>
-          <div class="productLine"></div>
-          <div class="productPrice">
+          <div className="productLine"></div>
+          <p className="productTime">2020.11.20</p>
+          <div className="productLine"></div>
+          <div className="productPrice">
             <h3>$1280</h3>
             <img src="./IMG/heart.svg" alt="" />
           </div>
         </div>
-        <div class="productLink">
+        <div className="productLink">
           <img src="https://picsum.photos/id/277/320/320" alt="" />
-          <div class="coupon">
+          <div className="coupon">
             <div>戶外體驗</div>
             <div>限額</div>
           </div>
@@ -53,18 +49,17 @@ function Main() {
           <p>
             它是集體隨時指揮進來並非回麼嘉義不得不，前 進線上打開臨時驚訝......
           </p>
-          <div class="productLine"></div>
-          <p class="productTime">2020.11.20</p>
-          <div class="productLine"></div>
-          <div class="productPrice">
+          <div className="productLine"></div>
+          <p className="productTime">2020.11.20</p>
+          <div className="productLine"></div>
+          <div className="productPrice">
             <h3>$1280</h3>
             <img src="./IMG/heart.svg" alt="" />
           </div>
         </div>
       </div>
-    </main>
     </>
   );
 }
 
-export default Main;
+export default DetailMain;
