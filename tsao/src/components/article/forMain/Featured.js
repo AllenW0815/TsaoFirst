@@ -5,7 +5,7 @@ function Featured() {
 
     async function getArticleFromServer() {
 
-        const url = 'http://localhost:3000/try-db-featured'
+        const url = 'http://localhost:3000/article/forFeatured'
 
         const request = new Request(url, {
             method: 'GET',

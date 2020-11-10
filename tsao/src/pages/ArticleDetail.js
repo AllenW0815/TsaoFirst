@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css';
 import Navbar from './../components/article/Navbar'
-import Type from './../components/article/Type'
+import TypeDetail from './../components/article/TypeDetail'
 import DetailMain from './../components/article/DetailMain'
 // import Featured from '../conponents/forMain/Featured'
 import Footer from './../components/article/Footer'
@@ -11,7 +11,7 @@ function ArticleDetail() {
     <>
     <Navbar/>
     <div class="hr"></div>
-    <Type/>
+    <TypeDetail/>
     <main>
     <DetailMain/>
     </main>

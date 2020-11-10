@@ -5,7 +5,7 @@ function LatestArticle() {
 
     async function getArticleFromServer() {
 
-        const url = 'http://localhost:3000/try-db-1'
+        const url = 'http://localhost:3000/article/forLatest'
 
         const request = new Request(url, {
             method: 'GET',
