@@ -1,20 +1,57 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './css/.css';
+import OtherArticleSearch from './forMain/OtherArticleSearch'
 import Featured from './forMain/Featured'
-import DetailPage from './forMain/DetailPage'
+import TypeButton from './forMain/TypeButton'
+import DropDownIcon from './forMain/DropDownIcon'
+import SearchInput from './SearchInput'
 
 
-function DetailMain() {
+
+function ListMainSearch() {
+  const [inputSearch,setinputSearch]=useState('')
+  const [searchData,setSearchData] = useState([])
+  const [type,setType] = useState(0)
+
+  const sendData = async()=>{
+    const res=  await fetch('http://localhost:3000/article/forSearch',{
+      method: 'POST',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+      body: JSON.stringify({inputSearch: inputSearch}),
+  
+    })
+    const data =  await res.json()
+    setSearchData(data)
+    }
+
+  console.log(type)
   return (
     <>
       <div className="articleList">
         <div className="hr"></div>
-        <DetailPage/>
+        <TypeButton setType={setType}/>
+        <div className="otherArticles">
+        <OtherArticleSearch 
+        type={type}
+        searchData={searchData}
+        />       
+        </div>
+        <DropDownIcon/>
       </div>    
       <div className="recommend"> 
         <div className="featured">
           <Featured/>
         </div>
+        <SearchInput
+          inputSearch={inputSearch}
+          setinputSearch={setinputSearch}
+          searchData={searchData}
+          setSearchData={setSearchData}
+          sendData={sendData}
+        />
         <div className="productRecommend">
           <div>
             <img src="./IMG/為您推薦Icon.svg" alt="" />
@@ -58,8 +95,9 @@ function DetailMain() {
           </div>
         </div>
       </div>
+
     </>
   );
 }
 
-export default DetailMain;
+export default ListMainSearch;

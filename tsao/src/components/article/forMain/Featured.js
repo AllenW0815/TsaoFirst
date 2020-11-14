@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './../css/.css';
 function Featured() {
     const [article, setArticle] = useState([])
@@ -27,8 +28,8 @@ function Featured() {
       const display=(
           <>
         {article.map((value,index)=>{
-            return(<div className="featuredBlock">
-            <button><a href="#">{value.sid}</a></button>
+            return(<div className="featuredBlock" key={value.sid}>
+            <button><Link to="/articleDetail">{value.sid}</Link></button>
             <h3>{value.title}</h3>
             <div className="line"></div>
           </div>)

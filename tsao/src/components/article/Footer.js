@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom'
 import './css/.css';
 function Footer() {
   return (
@@ -13,13 +14,13 @@ function Footer() {
       </div>
       <div className="footerInfo">
         <ul>
-          <li><a href="#">品牌故事</a></li>
+          <li><Link to="/articleDetail">品牌故事</Link></li>
           <li><div></div></li>
-          <li><a href="#">商品列表</a></li>
+          <li><Link to="/articleDetail">商品列表</Link></li>
           <li><div></div></li>
-          <li><a href="#">課程活動</a></li>
+          <li><Link to="/articleDetail">課程活動</Link></li>
           <li><div></div></li>
-          <li><a href="#">文章專欄</a></li>
+          <li><Link to="/articleDetail">文章專欄</Link></li>
         </ul>
       </div>
       <div className="backGroundColor"></div>

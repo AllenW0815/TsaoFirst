@@ -6,6 +6,7 @@ import ListMain from './../components/article/ListMain'
 // import Featured from '../conponents/forMain/Featured'
 import Footer from './../components/article/Footer'
 
+
 function ArticleList() {
   
   return (

@@ -1,22 +1,77 @@
-import React,{useState} from 'react';
+import React, { useState, useEffect } from 'react'
 import './css/.css';
 import LatestArticle from './forMain/LatestArticle'
 import OtherArticle from './forMain/OtherArticle'
 import Featured from './forMain/Featured'
 import TypeButton from './forMain/TypeButton'
 import DropDownIcon from './forMain/DropDownIcon'
+import SearchInput from './SearchInput'
 
-function ListMain(props) {
+
+
+function ListMain() {
+  const [inputSearch,setinputSearch]=useState('')
+  const [searchData,setSearchData] = useState([])
+  const [article, setArticle] = useState([])
   const [type,setType] = useState(0)
-  console.log(type)
+  const [show,setShow] = useState(true)
+
+  const sendData = async(text='')=>{
+    setinputSearch(text)
+    const res=  await fetch('http://localhost:3000/article/forSearch',{
+      method: 'POST',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+      body: JSON.stringify({inputSearch: text}),
+  
+    })
+    const data =  await res.json()
+    setArticle(data)
+    setShow(text?false:true)
+    }
+
+  
+
+    async function getArticleFromServer() {
+
+      const url = 'http://localhost:3000/article/forList'
+
+      const request = new Request(url, {
+          method: 'GET',
+          headers: new Headers({
+            Accept: 'application/json',
+            'Content-Type': 'appliaction/json',
+          }),
+        })
+        const response = await fetch(request)
+        const data = await response.json()
+        console.log(data)
+        // 設定資料
+        setArticle(data)
+  }
+  useEffect(() => {
+      getArticleFromServer() 
+    }, [])
+
+  if(searchData){
   return (
     <>
+    {/* if(searchData== -1) */}
       <div className="articleList">
-         <LatestArticle/>
+        {show?<LatestArticle/>:null} 
         <div className="hr"></div>
         <TypeButton setType={setType}/>
         <div className="otherArticles">
-        <OtherArticle type={type}/>       
+        <OtherArticle 
+        type={type}
+        searchData={searchData}
+        inputSearch={inputSearch}
+        setinputSearch={setinputSearch}
+        setArticle={setArticle}
+        article={article}
+        />       
         </div>
         <DropDownIcon/>
       </div>    
@@ -24,6 +79,12 @@ function ListMain(props) {
         <div className="featured">
           <Featured/>
         </div>
+        <SearchInput
+          inputSearch={inputSearch}
+          setinputSearch={setinputSearch}
+          sendData={sendData}
+          setShow={setShow}
+        />
         <div className="productRecommend">
           <div>
             <img src="./IMG/為您推薦Icon.svg" alt="" />
@@ -69,7 +130,7 @@ function ListMain(props) {
       </div>
 
     </>
-  );
+  )};
 }
 
 export default ListMain;

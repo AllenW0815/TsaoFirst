@@ -1,4 +1,10 @@
-input {
+.searchInput {
+  position: relative;
+  left: 100px;
+  padding-bottom: 20px;
+}
+
+.arInput {
   width: 150px;
   border: 2px solid #00273c;
   border-radius: 75px;
@@ -6,7 +12,11 @@ input {
   padding: 0 10px;
   letter-spacing: 2px;
 }
-input:focus {
+.arInput:focus {
   outline: none;
   padding: 0 10px;
+}
+
+.fas {
+  cursor: pointer;
 }

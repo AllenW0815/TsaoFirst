@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom'
 import './css/.css';
 function Navbar() {
   return (
@@ -6,15 +7,15 @@ function Navbar() {
      <header>
       <img src="./IMG/navbarLogo.svg" alt="圖片遺失" />
       <ul>
-        <li><a href="#">品牌故事</a></li>
-        <li><a href="#">商品列表</a></li>
-        <li><a href="#">課程活動</a></li>
-        <li><a href="#">文章專欄</a></li>
+          <li><Link to="/articleDetail">品牌故事</Link></li>
+          <li><Link to="/articleDetail">商品列表</Link></li>
+          <li><Link to="/articleDetail">課程活動</Link></li>
+          <li><Link to="/articleDetail">文章專欄</Link></li>
         <li>
-          <a href="#"><img src="./IMG/member.svg" alt="圖片遺失" /></a>
+        <Link to="/articleDetail"><img src="./IMG/member.svg" alt="圖片遺失" /></Link>
         </li>
         <li>
-          <a href="#"><img src="./IMG/購物車.svg" alt="圖片遺失" /></a>
+        <Link to="/articleDetail"><img src="./IMG/購物車.svg" alt="圖片遺失" /></Link>
         </li>
       </ul>
     </header>

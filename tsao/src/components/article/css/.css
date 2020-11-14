@@ -202,11 +202,16 @@ main .articleList .hr {
 main .articleList .otherArticles {
   width: 665px;
   max-height: 1106px;
-  overflow: hidden;
-  /* overflow-y: scroll; */
+  /* overflow: hidden; */
+  overflow-y: scroll;
+}
+main .articleList .otherArticles::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  /*將scrollbar變不見 仍有效果*/
 }
 
-main .articleList .otherArticles .otherArticle {
+main .articleList .otherArticles .otherArticle > div {
   max-width: 630px;
   position: relative;
   padding: 15px 0;
