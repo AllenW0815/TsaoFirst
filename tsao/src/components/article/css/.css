@@ -211,7 +211,7 @@ main .articleList .otherArticles::-webkit-scrollbar {
   /*將scrollbar變不見 仍有效果*/
 }
 
-main .articleList .otherArticles .otherArticle > div {
+main .articleList .otherArticles .otherArticle {
   max-width: 630px;
   position: relative;
   padding: 15px 0;

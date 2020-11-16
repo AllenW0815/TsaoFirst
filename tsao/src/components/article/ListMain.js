@@ -92,17 +92,15 @@ function ListMain() {
           </div>
         </div>
         <div className="productLink">
-          <img src="https://picsum.photos/id/280/320/320" alt="" />
+          <img src="./IMG/linkPro.jpg" alt="" />
           <div className="coupon">
-            <div>戶外體驗</div>
-            <div>限額</div>
+            <div>限時優惠</div>
+            <div>熱銷</div>
           </div>
-          <h3>海灘守護-第三期</h3>
+          <h3>活萃修護精華油</h3>
           <p>
-            它是集體隨時指揮進來並非回麼嘉義不得不，前 進線上打開臨時驚訝......
+            當季熱銷TOP3
           </p>
-          <div className="productLine"></div>
-          <p className="productTime">2020.11.20</p>
           <div className="productLine"></div>
           <div className="productPrice">
             <h3>$1280</h3>
@@ -110,23 +108,22 @@ function ListMain() {
           </div>
         </div>
         <div className="productLink">
-          <img src="https://picsum.photos/id/277/320/320" alt="" />
+          <img src="./IMG/linkPro.jpg" alt="" />
           <div className="coupon">
-            <div>戶外體驗</div>
-            <div>限額</div>
+            <div>限時優惠</div>
+            <div>熱銷</div>
           </div>
-          <h3>海灘守護-第三期</h3>
+          <h3>活萃修護精華油</h3>
           <p>
-            它是集體隨時指揮進來並非回麼嘉義不得不，前 進線上打開臨時驚訝......
+            當季熱銷TOP3
           </p>
-          <div className="productLine"></div>
-          <p className="productTime">2020.11.20</p>
           <div className="productLine"></div>
           <div className="productPrice">
             <h3>$1280</h3>
             <img src="./IMG/heart.svg" alt="" />
           </div>
         </div>
+       
       </div>
 
     </>
